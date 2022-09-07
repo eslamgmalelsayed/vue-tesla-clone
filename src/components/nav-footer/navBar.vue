@@ -1,52 +1,56 @@
 <template>
-    <nav class="navbar navbar-expand-lg pt-0 fixed-top d-lg-block d-none">
-        <div class="container-fluid">
-            <a class="navbar-brand pt-0" href="#">
-                <img class="img-fluidd" src="../../assets/images/tesla.webp" alt="logo" width="140" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" href="#">Model S</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Model 3</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Model X</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Model Y</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Solar Roof</a>
-                </li>
-                 <li class="nav-item">
-                <a class="nav-link" href="#">Solar Panels</a>
-                </li>
-            </ul>
-            <span class="navbar-text">
-                <a class="text-decoration-none" href="#">shop</a>
-                <a class="text-decoration-none px-4" href="#">account</a>
-                <a class="text-decoration-none" href="#">menu</a>
-            </span>
+    <nav class="fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="#">
+                <img src="../../assets/images/tesla.webp" alt="logo" width="140" height="40">
+                </a>
+            </div>
+            <div class="links d-xl-block d-none">             
+                <a href="#">Model S</a>
+                <a href="#">Model 3</a>
+                <a href="#">Model x</a>
+                <a href="#">Model y</a>
+                <a href="#">Solar Roof</a>
+                <a href="#">Solar panels</a>
+            </div>
+            <div class="end">
+                <a class="d-xl-inline d-none" href="#">Shop</a>
+                <a class="d-xl-inline d-none" href="#">Account</a>
+                <a class="end-link" @click="toggler" href="#">Menu</a>
             </div>
         </div>
     </nav>
 </template>
+<script>
+export default {
+    name:'navBar',
+    props:{
+        show: Boolean,
+        toggler:Function
+    },
+}
+</script>
 <style lang="scss" scoped>
 
 nav{
     z-index: 999;
-    a{
+    .links a,.end a{
         font-size: .9rem;
         color: #000;
         font-weight: bold;
+        text-decoration: none;
+        padding: .4rem 1rem;
+        transition: .4s;
+        border-radius: 3px;
         &:hover{
             color: #000;
+            background: rgba(176, 173, 173, 0.3);
+        }
+    }
+    @media(max-width:1200px){
+        .end-link{
+        background: rgba(176, 173, 173, 0.3);
         }
     }
     img{

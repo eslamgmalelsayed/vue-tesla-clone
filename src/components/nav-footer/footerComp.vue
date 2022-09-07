@@ -1,6 +1,7 @@
 <template>
     <footer class="py-3">
         <div class="container text-center">      
+            <div class="d-flex justify-content-center align-items-center flex-wrap flex-sm-row flex-column">
             <a href="#">Tesla © 2022</a>
             <a href="#">Privacy & Legal</a>
             <a href="#">Vehicle Recalls</a>
@@ -9,6 +10,7 @@
             <a href="#">News</a>
             <a href="#">Engage</a>
             <a href="#">Locations</a>
+            </div>
         </div>
     </footer>
 </template>
